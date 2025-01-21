@@ -9,7 +9,6 @@
 
 /* common */
 body {
-  font: normal 16px/1.4 var(--orbitron-font-style);
   letter-spacing: 1px;
   /* background: var(--main-dark-color); */
   color: var(--main-font-color);
@@ -17,24 +16,41 @@ body {
 
 /* contents */
 .wrap {
+  overflow: hidden;     
   width: 100%;
-  height: 100%;
-  position: fixed;
-  perspective: 600px;
+  height: 100vh;
+  position: relative;
     background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
-  & > {
-    height: 100%;
-    width: 100%;
-    display: block;
-    object-fit: cover;
+  .list{
     z-index: 10;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    ul{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      li{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+  .circle_wrap{
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
   }
   .circle {
+    opacity: 0;
     width: 600px;
     height: 800px;
     position: absolute;
@@ -117,7 +133,7 @@ body {
   }
 }
 
-@keyframes cyberspace {
+ @keyframes cyberspace {
   0% {
     transform: rotateY(0deg);
   }

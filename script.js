@@ -28,3 +28,20 @@
 //     circle.style.animationPlayState = "running";
 //   });
 // });
+
+const lists = document.querySelectorAll('.list ul li');
+const circles = document.querySelectorAll('.circle_wrap .circle');
+lists.forEach(function(list, index){
+    list.addEventListener("mouseenter", function(){
+        circles.forEach(function(circle) {
+            document.querySelector('.list').style.height = "100%";
+            circles[index].style.opacity = 1;
+        });
+    })
+    list.addEventListener("mouseleave", function(){
+        circles.forEach(function(circle) {
+            document.querySelector('.list').style.height = "auto";
+            circle.style.opacity = 0;
+        });
+    })
+})
