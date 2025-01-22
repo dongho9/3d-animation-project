@@ -16,32 +16,21 @@
 
 //해당 모션 : 각각의 face에서 마우스가 떠나가면 회전이 정상적으로 진행
 
-// const circle = document.querySelector("#circle");
-// const articles = document.querySelectorAll("article");
-// console.log(articles);
+const circle = document.querySelector("#circle");
+const articles = document.querySelectorAll("article");
 
-// articles.forEach((article) => {
-//   article.addEventListener("mouseenter", () => {
-//     circle.style.animationPlayState = "paused";
-//   });
-//   article.addEventListener("mouseleave", () => {
-//     circle.style.animationPlayState = "running";
-//   });
-// });
+articles.forEach((article) => {
+  article.addEventListener("mouseenter", () => {
+    circle.style.animationPlayState = "paused";
+  });
+  article.addEventListener("mouseleave", () => {
+    circle.style.animationPlayState = "running";
+  });
+});
 
-const lists = document.querySelectorAll('.list ul li');
-const circles = document.querySelectorAll('.circle_wrap .circle');
-lists.forEach(function(list, index){
-    list.addEventListener("mouseenter", function(){
-        circles.forEach(function(circle) {
-            document.querySelector('.list').style.height = "100%";
-            circles[index].style.opacity = 1;
-        });
-    })
-    list.addEventListener("mouseleave", function(){
-        circles.forEach(function(circle) {
-            document.querySelector('.list').style.height = "auto";
-            circle.style.opacity = 0;
-        });
-    })
-})
+  console.log(articles);
+  articles.forEach((articlee, index) => {
+    articlee.addEventListener("click", () => {
+      console.log(`${index}`);
+    });
+  });
